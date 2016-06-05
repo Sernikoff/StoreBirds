@@ -1,9 +1,14 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -81,6 +86,23 @@ public class SimpleTable extends JPanel{
             JFrame frame = new JFrame("SimpleTableDemo");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+            JMenuBar greenMenuBar = new JMenuBar();
+            greenMenuBar.setOpaque(true);
+            greenMenuBar.setBackground(new Color(154, 165, 127));
+            greenMenuBar.setPreferredSize(new Dimension(200, 40));
+            JButton buy = new JButton("Buy");
+           
+            buy.addActionListener(new ActionListener(){
+
+    			@Override
+    			public void actionPerformed(ActionEvent arg0) {
+    				new BirdshopUI(as);
+    			}
+    		});
+            
+            greenMenuBar.add(buy);
+            frame.setJMenuBar(greenMenuBar);
+           
             //Create and set up the content pane.
             SimpleTable newContentPane = new SimpleTable(as);
             newContentPane.setOpaque(true); //content panes must be opaque

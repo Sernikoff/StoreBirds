@@ -5,10 +5,10 @@ public class Launcher {
 		ActionStore as = new ActionStore();
 		as.demoShop();
 
-		BirdshopUI ui = new BirdshopUI(as);
+		//BirdshopUI ui = new BirdshopUI(as);
 //SimpleTable st = new SimpleTable(as);
 //st.createAndShowGUI();
-		//new SimpleTable(as).createAndShowGUI();
+		new SimpleTable(as).createAndShowGUI();
 		
 	}
 
